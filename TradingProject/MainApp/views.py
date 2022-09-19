@@ -26,5 +26,5 @@ def handleUpload(request):
     with open("MainApp/static/main/media/sample.json", "w",encoding='utf-8') as outfile:
         json.dump(traDict, outfile)
  
-
-    return render(request, 'main/download.html')
+    params = {'data': traDict}
+    return render(request, 'main/download.html', params)
